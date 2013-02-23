@@ -1,0 +1,6 @@
+{
+  "mongodb_url": "mongodb://127.0.0.1/serverjs",
+  "mongodb_url_deploy": "mongodb://nodejitsu:60f84bb7d4de9c62813f3a47d04fbc22@linus.mongohq.com:10042/nodejitsudb1240363116",
+  
+  "logger": { "format": "dev" }
+}

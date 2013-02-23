@@ -1,0 +1,54 @@
+curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"name":"test_user","password":"1234567890","email":"test_user@gmail.com","screen_name":"Test User", "about":"Sexy Free and Single", "location" : "Quang Tri"}'  http://0.0.0.0:3000/auth/register
+
+
+
+curl  -H "Content-Type: application/json" -H "Accept: application/json" -X GET -d '{"name":"sepdau12", "password": "1234567890"}' http://0.0.0.0:3000/auth/login
+
+
+curl  -H "Content-Type: application/json" -H "Accept: application/json" -X GET -d '{"name":"sepdau12345", "token": "62b07b9bf1377156f9fd594c41fd366183027d2d2da70a85b13c93ad570b7f01ac0c6d1984a177a094107cb083f8b409"}' http://0.0.0.0:3000/auth/autologin
+info: success~
+
+curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"name":"sepdau12345","token": "62b07b9bf1377156f9fd594c41fd366183027d2d2da70a85b13c93ad570b7f01ac0c6d1984a177a094107cb083f8b409","email":"changeemail@gmail.com","screen_name":"Change Name"}'  http://0.0.0.0:3000/auth/updateinfo
+
+
+
+curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"email":" mrletrungchanh@gmail.com", "salt": "901635389565"}'  http://0.0.0.0:3000/auth/validatecode
+
+curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"name":"mrchanh","password": "123456","device": "xphone", "token": "0467b2a0d79488a03303b3d7839accb8cab700db06c1542be72327a2279100cededd4de1519f569151b59b8ad00b84f6"}'  http://0.0.0.0:3000/auth/resetpassword
+
+
+curl "http://localhost:3000/api/photos" -F myfile=@"/home/chanhle/Pictures/22.png"
+
+
+// var fileupload = require('fileupload').createFileUpload('./public/images/avartar').middleware;
+
+// app.post('/upload', fileupload, function(req, res) {
+	// // files are now in the req.body object along with other form fields
+	// // files also get moved to the uploadDir specified
+	// Accounts.updateAvartar('sepdau', req.body.myfile[0].path + req.body.myfile[0].basename, function(info) {
+		// res.send(req.body);
+	// });
+// 
+// }); 
+
+// { callback: 'jQuery16106778418252245373_1361198119640',
+  // '{ "name":"dd","email":"dd3232232@gmail.com","screen_name":"dd34343d","password":"hanhnhan","device":21312312}': '',
+  // _: '1361198280359' }
+
+
+// http://sepdau.serverjs.jit.su/auth/register?callback=jQuery16106778418252245373_1361198119639&{%20"name":"dd","email":"giaosudau@gmail.com","screen_name":"ddd","password":"hanhnhan","device":21312312}&_=1361198177911
+
+
+
+http://localhost:3000/auth/createfollowing?callback=jQuery16104670869295950979_1361607659796&{"name":"testuser1","name":"envatowebdev","token":%ece20af054339bb52d4feee9a05ab8cc401f8dec6b622b8df1e4c0d1789825bee8dd47f572cdc737a098a5be03044596","device":"xphone"}&_=1361607667778
+
+http://localhost:3000/auth/createfollowing?callback=jQuery16104670869295950979_1361607659796&{"name":"testuser1","name_follow":"envatowebdev","token":"ece20af054339bb52d4feee9a05ab8cc401f8dec6b622b8df1e4c0d1789825bee8dd47f572cdc737a098a5be03044596","device":"xphone"}&_=1361607667778
+
+
+http://localhost:3000/auth/getfollowing?callback=jQuery16104670869295950979_1361607659796&{"name":"testuser1","token":"ece20af054339bb52d4feee9a05ab8cc401f8dec6b622b8df1e4c0d1789825bee8dd47f572cdc737a098a5be03044596","device":"xphone"}&_=1361607667778
+
+
+http://localhost:3000/auth/getfollowing?callback=jQuery16104670869295950979_1361607659796&%7B%22name%22:%22testuser1%22,%22token%22:%22ece20af054339bb52d4feee9a05ab8cc401f8dec6b622b8df1e4c0d1789825bee8dd47f572cdc737a098a5be03044596%22,%22device%22:%22xphone%22%7D&_=1361607667778
+
+
+http://localhost:3000/auth/getinfouser?callback=jQuery16104670869295950979_1361607659796&{"name":"testuser1","name_get":"sepdau","token":"ece20af054339bb52d4feee9a05ab8cc401f8dec6b622b8df1e4c0d1789825bee8dd47f572cdc737a098a5be03044596","device":"xphone"}&_=1361607667778
